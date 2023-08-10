@@ -1,7 +1,7 @@
 import pandas as pd
 
-csv_file = r'C:\Users\MaplesWi\OneDrive - Clayton Homes\Desktop\oracle_data_dictionary.csv'
-parquet_file = r'C:\Users\MaplesWi\OneDrive - Clayton Homes\Desktop\oracle_data_dictionary.parquet'
+csv_file = r'your csv from Oracle'
+parquet_file = r'output parquet file'
 
 df = pd.read_csv(csv_file)
 df.to_parquet(parquet_file)

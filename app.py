@@ -1,12 +1,13 @@
 # Updates to make: limit df to show only the selected tables
 # deploy for others to use
+# streamlit run app.py --server.maxMessageSize 600
 
 import streamlit as st
 import polars as pl
 
 st.set_page_config(page_title="Oracle Data Dictionary", page_icon=":snake:", layout="wide")
 
-df = pl.read_csv('oracle_data_dictionary.csv')
+df = pl.read_parquet('oracle_data_dictionary.parquet')
 
 # LOAD ASSETS
 
