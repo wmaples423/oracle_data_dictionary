@@ -7,7 +7,15 @@ import polars as pl
 
 st.set_page_config(page_title="Oracle Data Dictionary", page_icon=":snake:", layout="wide")
 
-df = pl.read_parquet('oracle_data_dictionary.parquet')
+# df = pl.read_parquet('oracle_data_dictionary.parquet')
+
+@st.cache_data
+def load_data():
+    parquet_file = 'oracle_data_dictionary.parquet'
+    return pl.read_parquet(parquet_file)
+
+
+df = load_data()
 
 # LOAD ASSETS
 
