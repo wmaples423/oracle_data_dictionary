@@ -1,1 +1,0 @@
-# oracle_data_dictionary
