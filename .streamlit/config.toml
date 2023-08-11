@@ -11,3 +11,4 @@ gatherUsageStats = false
 
 [server]
 maxMessageSize = 1000
+healthCheckTimeout = 15
