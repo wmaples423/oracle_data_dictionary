@@ -10,7 +10,7 @@ st.set_page_config(page_title="Oracle Data Dictionary", page_icon=":snake:", lay
 
 # df = pl.read_parquet('oracle_data_dictionary.parquet')
 
-@st.cache
+@st.cache_data
 def perform_health_check():
     response = requests.get("http://localhost:8501/healthz")
     return response.status_code == 200
