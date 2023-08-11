@@ -6,4 +6,4 @@ textColor = '#FFFFFF'
 font = "sans serif"
 
 [server]
-maxMessageSize = 500
+maxMessageSize = 1000
