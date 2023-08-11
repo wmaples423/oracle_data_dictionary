@@ -4,10 +4,21 @@
 
 import streamlit as st
 import polars as pl
+import requests
 
 st.set_page_config(page_title="Oracle Data Dictionary", page_icon=":snake:", layout="wide")
 
 # df = pl.read_parquet('oracle_data_dictionary.parquet')
+
+@st.cache
+def perform_health_check():
+    response = requests.get("http://localhost:8501/healthz")
+    return response.status_code == 200
+
+if perform_health_check():
+       st.write("App is healthy")
+else:
+    st.write("App is not healthy")
 
 @st.cache_data
 def load_data():
